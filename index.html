@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABDULLAH MERT| 10 / B</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="main">
+    <header>
+      <a href="#"><img src="logo.png" class="logo"></a>
+      <div class="toggle"></div>
+      <ul class="navigation">
+        <li><a href="#">Anasayfa</a></li>
+        <li><a href="#">Menü</a></li>
+        <li><a href="#">Hakkında</a></li>
+        <li><a href="iletişim.html">İletişim</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <div class="text">
+        <h2>Parmak<br>Isırtan<span class="a">Lezzet</span></h2>
+        <p>KFC’nin global marka standartları gereği, tüm gıda ve ambalaj tedarikçilerimizi çok ciddi denetim süreçlerinden geçirdikten sonra belirliyoruz. Tedarikçilerimizin denetimlerine ek olarak biz de düzenli olarak tedarikçilerimizin tüm ürünlerini kontrol ediyoruz ve tüketicilerimize güvenilir, onaylı ürünleri sunuyoruz.
+
+          Tavuklarımızı %100 helal sertifikalı Türk tavuk üreticileri Banvit ve Lezita’nın gıda güvenliği kurallarına uygun, kontrol ve denetimleri tam, anlaşmalı çiftliklerinden sağlıyoruz.</p>
+        <a href="#" class="btn">Sipariş Ver</a>
+      </div>
+      <div class="slider">
+        <div class="slides active">
+          <img src="burger_fries.png">
+        </div>
+        <div class="slides">
+          <img src="french_fries.png">
+        </div>
+        <div class="slides">
+          <img src="burger.png">
+        </div>
+        <div class="slides">
+          <img src="fried_chicken.png">
+        </div>
+      </div>
+    </div>
+      <!--softwarefilters-->
+    <div class="footer">
+      <ul class="sci">
+        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+      </ul>
+      <div class="prevNext">
+        <p>Always Fresh</p>
+        <span class="prev"><ion-icon name="chevron-back-outline"></ion-icon></span>
+        <span class="next"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <!--softwarefilters-->
+  <script>
+    //geçiş 
+    const menutoggle = document.querySelector('.toggle');
+    const navigation = document.querySelector('.navigation');
+    menutoggle.onclick = function(){
+      menutoggle.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+
+    //kaydırma
+    const slides = document.querySelectorAll('.slides');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    i = 0;
+    
+    function ActiveSlide(n){
+      for(slide of slides)
+      slide.classList.remove('active');
+      slides[n].classList.add('active');
+    }
+
+    //sonraki düğme fonksiyonu
+    next.addEventListener('click', function(){
+      if(i == slides.length - 1){
+        i = 0;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i++;
+        ActiveSlide(i);
+      }
+    })
+
+     //önceki düğme fonksiyonu
+     prev.addEventListener('click', function(){
+      if(i == 0){
+        i = slides.length -1;
+        ActiveSlide(i);
+      }
+      else 
+      {
+        i--;
+        ActiveSlide(i);
+      }
+    })
+  </script>
+</body>
+</html>
